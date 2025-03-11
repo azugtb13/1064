@@ -22,3 +22,37 @@
   font-weight: bold;
   font-style: normal;
 }
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.scroll-indicator {
+  animation: bounce 2s infinite;
+}
+
+.gallery-slider {
+  --swiper-theme-color: #ffffff;
+  --swiper-navigation-size: 24px;
+  padding: 0 40px;
+}
+
+.gallery-slider .swiper-button-next,
+.gallery-slider .swiper-button-prev {
+  width: auto;
+  height: auto;
+  background: none;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-slider .swiper-button-next:hover,
+.gallery-slider .swiper-button-prev:hover {
+  opacity: 1;
+  background: none;
+}

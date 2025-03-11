@@ -1,6 +1,11 @@
 import LogoShader from "/src/LogoShader";
 import React, { useRef, useState } from 'react';
-import { Instagram, Facebook, Mail } from 'lucide-react';
+import { Instagram, Facebook, Mail, ChevronDown } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 function App() {
   const [email, setEmail] = useState('');
@@ -9,6 +14,17 @@ function App() {
   const butikRef = useRef<HTMLDivElement>(null);
   const omOssRef = useRef<HTMLDivElement>(null);
   const topRef = useRef<HTMLDivElement>(null);
+
+  const galleryImages = [
+    "https://i.imgur.com/UNrNrlx.jpeg",
+    "https://i.imgur.com/MjZLRzf.jpeg",
+    "https://i.imgur.com/g9tQnUQ.jpeg",
+    "https://i.imgur.com/Qqyucu5.jpeg",
+    "https://i.imgur.com/mv0kAOy.jpeg",
+    "https://i.imgur.com/7V1nm03.jpeg",
+    "https://i.imgur.com/DX071gk.jpeg",
+    "https://i.imgur.com/lEB0fxL.jpeg"
+  ];
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
@@ -95,6 +111,14 @@ function App() {
             <p className="md:text-3xl text-xl">Skapad för att vara för evigt</p>
           </div>
         </div>
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <ChevronDown 
+            size={32} 
+            className="text-white scroll-indicator cursor-pointer"
+            onClick={() => scrollToSection(butikRef)}
+          />
+        </div>
       </div>
 
       {/* Brand Introduction Section */}
@@ -102,9 +126,40 @@ function App() {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-optima-italic mb-6">Vårt Löfte</h2>
           <div className="w-16 h-0.5 bg-[#B48406] mx-auto mb-12"></div>
-          <p className="text-lg md:text-xl font-optima-italic leading-relaxed mb-8">
+          <p className="text-lg md:text-xl font-optima-italic leading-relaxed mb-1">
             Vi på 1064 Jewelry förenar skickligt hantverk med modern, tidlös design. Varje smycke är ett unikt konstverk som noggrant formas efter din personliga vision. Vare sig du söker en perfekt vigselring eller önskar ge nytt liv åt en älskad familjeklenod – hos oss utförs varje beställning med precision och kärlek för att skapa något alldeles unikt.
           </p>
+        </div>
+      </div>
+
+      {/* Gallery Section */}
+      <div className="py-16 px-4 bg-[#FCF2CC]">
+        <div className="max-w-[1800px] mx-auto">
+          <Swiper
+            modules={[Navigation, Pagination]}
+            spaceBetween={40}
+            slidesPerView={1}
+            navigation
+            breakpoints={{
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 40
+              }
+            }}
+            className="gallery-slider"
+          >
+            {galleryImages.map((image, index) => (
+              <SwiperSlide key={index}>
+                <div className="w-full px-4">
+                  <img
+                    src={image}
+                    alt={`Gallery image ${index + 1}`}
+                    className="w-full h-[1000px] object-cover"
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
 
@@ -122,7 +177,7 @@ function App() {
             title="Store Location"
             className="mb-8"
           ></iframe>
-          <p className="text-xl font-medium font-optima-italic">MÅN-FRE 10-19, LÖR 10-17, SÖN 12-17</p>
+          <p className="text-1xl font-medium font-optima-italic">MÅN-FRE 10-19, LÖR 10-17, SÖN 12-17</p>
         </div>
       </div>
 
@@ -187,15 +242,15 @@ function App() {
                 className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-white hover:bg-[#B48406] transition-colors duration-300">
                 <Facebook size={24} />
               </a>
-              <a href="mailto:info@1064.se" rel="noopener noreferrer"
+              <a href="mailto:1064@1064.se" rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-white hover:bg-[#B48406] transition-colors duration-300">
                 <Mail size={24} />
               </a>
             </div>
           </div>
 
-          <p className="text-center text-sm text-gray-600 mt-8 font-optima-bold">
-            1064 Jewelry © 2025
+          <p className="text-center text-sm text-gray-600 mt-8 font-optima-italic font-bold">
+            2025 - 1064 Jewelry Stockholm AB | Alla rättigheter förbehållna.
           </p>
         </div>
       </div>
