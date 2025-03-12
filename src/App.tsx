@@ -124,7 +124,7 @@ function App() {
       {/* Brand Introduction Section */}
       <div className="py-24 px-4 bg-[#FCF2CC]">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-optima-italic mb-6">Vårt Löfte</h2>
+          <h2 className="text-3xl md:text-4xl font-optima mb-6">Vårt Löfte</h2>
           <div className="w-16 h-0.5 bg-[#B48406] mx-auto mb-12"></div>
           <p className="text-lg md:text-xl font-optima-italic leading-relaxed mb-1">
             Vi på 1064 Jewelry förenar skickligt hantverk med modern, tidlös design. Varje smycke är ett unikt konstverk som noggrant formas efter din personliga vision. Vare sig du söker en perfekt vigselring eller önskar ge nytt liv åt en älskad familjeklenod – hos oss utförs varje beställning med precision och kärlek för att skapa något alldeles unikt.
@@ -150,7 +150,7 @@ function App() {
           >
             {galleryImages.map((image, index) => (
               <SwiperSlide key={index}>
-                <div className="w-full px-4">
+                <div className="w-full">
                   <img
                     src={image}
                     alt={`Gallery image ${index + 1}`}
