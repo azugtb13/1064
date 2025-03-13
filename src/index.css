@@ -66,6 +66,22 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('/assets/NunitoSans.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NunitoSans Italic';
+  src: url('/assets/NunitoSans-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
 @keyframes bounce {
   0%, 100% {
     transform: translateY(0);

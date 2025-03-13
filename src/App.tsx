@@ -91,20 +91,18 @@ function App() {
         </div>
       </div>
 
-      <div className="relative w-full overflow-hidden" style={{ height: 'calc(70vh - 90px)' }}>
+      <div className="relative w-full md:h-[56.25vw] h-screen">
         {/* Desktop Image */}
         <img 
-          src="https://i.imgur.com/CzXrJPW.jpeg" 
+          src="https://i.imgur.com/luClAVJ.jpeg" 
           alt="Luxury Jewelry Banner" 
-          className="hidden md:block w-full h-[70vh] object-cover"
-          style={{ marginTop: '0' }}
+          className="hidden md:block w-full h-full object-cover"
         />
         {/* Mobile Image */}
         <img 
           src="https://i.imgur.com/xkxqk3H.jpeg" 
           alt="Luxury Jewelry Banner Mobile" 
-          className="md:hidden w-full h-[70vh] object-cover"
-          style={{ marginTop: '0' }}
+          className="md:hidden w-full h-full object-cover"
         />
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
@@ -119,9 +117,9 @@ function App() {
       {/* Brand Introduction Section */}
       <div className="py-24 px-4 bg-[#FCF2CC]">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-unna mb-6">Vårt Löfte</h2>
+          <h2 className="text-5xl md:text-5xl font-birthstone mb-6">Vårt Löfte</h2>
           <div className="w-16 h-0.5 bg-[#B48406] mx-auto mb-12"></div>
-          <p className="text-lg md:text-xl font-unna leading-relaxed mb-1">
+          <p className="text-lg md:text-xl font-optima leading-relaxed mb-1">
             Vi på 1064 Jewelry förenar skickligt hantverk med modern, tidlös design. Varje smycke är ett unikt konstverk som noggrant formas efter din personliga vision. Vare sig du söker en perfekt vigselring eller önskar ge nytt liv åt en älskad familjeklenod – hos oss utförs varje beställning med precision och kärlek för att skapa något alldeles unikt.
           </p>
         </div>

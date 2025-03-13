@@ -12,6 +12,8 @@ export default {
         'unna-bold': ['Unna Bold', 'serif'],
         'unna-bold-italic': ['Unna Bold Italic', 'serif'],
         birthstone: ['Birthstone', 'serif'],
+        nunitosans: ['NunitoSans', 'sans-serif'],
+        'nunitosans-italic': ['NunitoSans Italic', 'serif'],
       },
     },
   },
