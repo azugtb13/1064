@@ -15,6 +15,10 @@ function App() {
   const omOssRef = useRef<HTMLDivElement>(null);
   const topRef = useRef<HTMLDivElement>(null);
 
+  // Adjustable margins for hero text (in pixels)
+  const heroTextMarginDesktop = -220; // Desktop margin
+  const heroTextMarginMobile = 0; // Mobile margin
+
   const galleryImages = [
     "https://i.imgur.com/UNrNrlx.jpeg",
     "https://i.imgur.com/MjZLRzf.jpeg",
@@ -94,21 +98,26 @@ function App() {
       <div className="relative w-full h-[70vh] md:h-[56.25vw]">
         {/* Desktop Image */}
         <img 
-          src="https://i.imgur.com/8rIPSFe.jpeg" 
+          src="https://i.imgur.com/CzXrJPW.jpeg" 
           alt="Luxury Jewelry Banner" 
           className="hidden md:block w-full h-full object-cover"
         />
         {/* Mobile Image */}
         <img 
-          src="https://i.imgur.com/SMCw58v.jpeg" 
+          src="https://i.imgur.com/xkxqk3H.jpeg" 
           alt="Luxury Jewelry Banner Mobile" 
           className="md:hidden w-full h-full object-cover"
         />
-        <div className="absolute inset-0 flex items-center md:items-end justify-center md:pb-40">
-          <div className="text-center text-white font-optima-italic drop-shadow-lg px-4">
-            <h1 className="md:text-4xl text-2xl mb-2">1064 Jewelry</h1>
+        <div 
+          className="absolute inset-0 flex items-center md:items-end justify-center md:pb-40"
+          style={{ 
+            transform: `translateY(${window.innerWidth >= 768 ? heroTextMarginDesktop : heroTextMarginMobile}px)`
+          }}
+        >
+          <div className="text-center text-white font-birthstone drop-shadow-1g px-4">
+            <h1 className="md:text-5xl text-2xl mb-2">1064 Jewelry</h1>
             <div className="w-12 h-0.5 bg-white mx-auto my-4"></div>
-            <p className="md:text-3xl text-xl">Skapad för att vara för evigt</p>
+            <p className="md:text-4xl text-xl">Skapad för att vara för evigt</p>
           </div>
         </div>
         {/* Scroll Indicator */}
@@ -124,9 +133,9 @@ function App() {
       {/* Brand Introduction Section */}
       <div className="py-24 px-4 bg-[#FCF2CC]">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-optima mb-6">Vårt Löfte</h2>
+          <h2 className="text-3xl md:text-4xl font-unna mb-6">Vårt Löfte</h2>
           <div className="w-16 h-0.5 bg-[#B48406] mx-auto mb-12"></div>
-          <p className="text-lg md:text-xl font-optima-italic leading-relaxed mb-1">
+          <p className="text-lg md:text-xl font-unna leading-relaxed mb-1">
             Vi på 1064 Jewelry förenar skickligt hantverk med modern, tidlös design. Varje smycke är ett unikt konstverk som noggrant formas efter din personliga vision. Vare sig du söker en perfekt vigselring eller önskar ge nytt liv åt en älskad familjeklenod – hos oss utförs varje beställning med precision och kärlek för att skapa något alldeles unikt.
           </p>
         </div>
