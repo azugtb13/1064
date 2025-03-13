@@ -94,13 +94,13 @@ function App() {
       <div className="relative w-full md:h-[56.25vw] h-screen">
         {/* Desktop Image */}
         <img 
-          src="https://i.imgur.com/luClAVJ.jpeg" 
+          src="https://i.imgur.com/zo1XeHz.jpeg" 
           alt="Luxury Jewelry Banner" 
           className="hidden md:block w-full h-full object-cover"
         />
         {/* Mobile Image */}
         <img 
-          src="https://i.imgur.com/xkxqk3H.jpeg" 
+          src="https://i.imgur.com/XPaWPKv.jpeg" 
           alt="Luxury Jewelry Banner Mobile" 
           className="md:hidden w-full h-full object-cover"
         />
@@ -117,9 +117,9 @@ function App() {
       {/* Brand Introduction Section */}
       <div className="py-24 px-4 bg-[#FCF2CC]">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-5xl md:text-5xl font-birthstone mb-6">Vårt Löfte</h2>
+          <h2 className="text-5xl md:text-7xl font-birthstone mb-6">Vårt Löfte</h2>
           <div className="w-16 h-0.5 bg-[#B48406] mx-auto mb-12"></div>
-          <p className="text-lg md:text-xl font-optima leading-relaxed mb-1">
+          <p className="text-lg md:text-2xl font-nunitosans leading-relaxed mb-1">
             Vi på 1064 Jewelry förenar skickligt hantverk med modern, tidlös design. Varje smycke är ett unikt konstverk som noggrant formas efter din personliga vision. Vare sig du söker en perfekt vigselring eller önskar ge nytt liv åt en älskad familjeklenod – hos oss utförs varje beställning med precision och kärlek för att skapa något alldeles unikt.
           </p>
         </div>
@@ -133,6 +133,7 @@ function App() {
             spaceBetween={40}
             slidesPerView={1}
             navigation
+            loop={true}
             breakpoints={{
               768: {
                 slidesPerView: 2,
