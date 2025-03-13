@@ -15,10 +15,6 @@ function App() {
   const omOssRef = useRef<HTMLDivElement>(null);
   const topRef = useRef<HTMLDivElement>(null);
 
-  // Adjustable margins for hero text (in pixels)
-  const heroTextMarginDesktop = -220; // Desktop margin
-  const heroTextMarginMobile = 0; // Mobile margin
-
   const galleryImages = [
     "https://i.imgur.com/UNrNrlx.jpeg",
     "https://i.imgur.com/MjZLRzf.jpeg",
@@ -95,31 +91,21 @@ function App() {
         </div>
       </div>
 
-      <div className="relative w-full h-[70vh] md:h-[56.25vw]">
+      <div className="relative w-full overflow-hidden" style={{ height: 'calc(70vh - 90px)' }}>
         {/* Desktop Image */}
         <img 
           src="https://i.imgur.com/CzXrJPW.jpeg" 
           alt="Luxury Jewelry Banner" 
-          className="hidden md:block w-full h-full object-cover"
+          className="hidden md:block w-full h-[70vh] object-cover"
+          style={{ marginTop: '0' }}
         />
         {/* Mobile Image */}
         <img 
           src="https://i.imgur.com/xkxqk3H.jpeg" 
           alt="Luxury Jewelry Banner Mobile" 
-          className="md:hidden w-full h-full object-cover"
+          className="md:hidden w-full h-[70vh] object-cover"
+          style={{ marginTop: '0' }}
         />
-        <div 
-          className="absolute inset-0 flex items-center md:items-end justify-center md:pb-40"
-          style={{ 
-            transform: `translateY(${window.innerWidth >= 768 ? heroTextMarginDesktop : heroTextMarginMobile}px)`
-          }}
-        >
-          <div className="text-center text-white font-birthstone drop-shadow-1g px-4">
-            <h1 className="md:text-5xl text-2xl mb-2">1064 Jewelry</h1>
-            <div className="w-12 h-0.5 bg-white mx-auto my-4"></div>
-            <p className="md:text-4xl text-xl">Skapad för att vara för evigt</p>
-          </div>
-        </div>
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
           <ChevronDown 
